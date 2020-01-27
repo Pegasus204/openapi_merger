@@ -6,14 +6,14 @@ module OpenapiMerger
       end
 
       def call
-        YAML.dump inputfile
+        YAML.dump input
       end
 
       attr_reader :options
 
       private
 
-      def inputfile
+      def input
         input2yaml
       end
 
@@ -21,7 +21,7 @@ module OpenapiMerger
         raise NotImplementedError, "Implement method"
       end
 
-      def file
+      def inputfile
         File.open options[:input]
       end
     end

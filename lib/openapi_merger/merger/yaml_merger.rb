@@ -6,7 +6,7 @@ module OpenapiMerger
       private
 
       def input2yaml
-        YAML.load file.read
+        YAML.load inputfile.read
       end
     end
   end
