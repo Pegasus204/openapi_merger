@@ -4,11 +4,11 @@ Gem::Specification.new do |spec|
   spec.name          = "openapi_merger"
   spec.version       = OpenapiMerger::VERSION
   spec.authors       = ["Fukaya Temma"]
-  spec.email         = ["tenma.fukaya@kyash.co"]
+  spec.email         = ["ride.or.die.2215@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Merge OpenAPI documents split into multiple files.}
+  spec.description   = %q{Merge OpenAPI documents split into multiple files.}
+  spec.homepage      = %q{https://github.com/Pegasus204/openapi_merger}
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
