@@ -5,7 +5,7 @@ module OpenapiMerger
     class YAMLMerger < OpenapiMerger::Merger::Base
       private
 
-      def input2yaml
+      def input2json
         YAML.load inputfile.read
       end
     end

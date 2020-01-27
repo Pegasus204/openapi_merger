@@ -6,7 +6,7 @@ module OpenapiMerger
       end
 
       def call
-        YAML.dump input
+        JSON.generate input
       end
 
       attr_reader :options
@@ -17,7 +17,7 @@ module OpenapiMerger
         input2yaml
       end
 
-      def input2yaml
+      def input2json
         raise NotImplementedError, "Implement method"
       end
 
