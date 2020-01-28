@@ -32,20 +32,16 @@ module OpenapiMerger
       end
     end
 
-    def outputfile
-      File.open(filepath, 'w')
-    end
-
     def build_yaml(output)
       return unless output.is_a?(Hash)
 
-      YAML.dump(output, outputfile)
+      File.write(filepath, YAML.dump(output))
     end
 
     def build_json(output)
       return unless output.is_a?(Hash)
 
-      outputfile.puts(JSON.pretty_generate(output))
+      File.write(filepath, JSON.pretty_generate(output))
     end
 
     def build_unsupported
