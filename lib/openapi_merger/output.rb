@@ -33,7 +33,7 @@ module OpenapiMerger
     end
 
     def outputfile
-      File.open filepath, 'w'
+      File.open(filepath, 'w')
     end
 
     def build_yaml(output)
