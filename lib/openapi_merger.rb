@@ -4,16 +4,22 @@ require 'dotenv/load'
 
 require 'openapi_merger/error'
 require 'openapi_merger/input'
+require 'openapi_merger/merge'
 require 'openapi_merger/output'
 require 'openapi_merger/version'
 
 module OpenapiMerger
   class << self
     def call
-      output.call(input.call)
+      merged = merge.call(input.call)
+      output.call(merged)
     end
 
     private
+
+    def merge
+      OpenapiMerger::Merge.new(options)
+    end
 
     def input
       @input ||= OpenapiMerger::Input.new(options)
