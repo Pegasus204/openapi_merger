@@ -45,7 +45,7 @@ module OpenapiMerger
     end
 
     def parse_json
-      JSON.load(input)
+      JSON.parse(input)
     end
 
     def parse_unsupported
