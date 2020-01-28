@@ -18,6 +18,9 @@ jobs:
           gem install bundler
           bundle install --jobs 4 --retry 3
 
+      - name: Run Rubocop
+        run: |
+          bundle exec rubocop
 
       - name: Run RSpec
         run: |
