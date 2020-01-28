@@ -10,25 +10,32 @@ require 'openapi_merger/version'
 module OpenapiMerger
   class << self
     def call
-      parsed_input = OpenapiMerger::Input.new(options).call
-      OpenapiMerger::Output.new(options).call(parsed_input)
+      output.call(input.call)
     end
 
     private
 
-    def options
-      {
-        input: input,
-        output: output
-      }.compact
-    end
-
     def input
-      ENV['INPUT_FILE']
+      @input ||= OpenapiMerger::Input.new(options)
     end
 
     def output
-      ENV['OUTPUT_FILE']
+      @output ||= OpenapiMerger::Output.new(options)
+    end
+
+    def options
+      @options ||= {
+        input: input_file,
+        output: output_file
+      }.compact
+    end
+
+    def input_file
+      @input_file ||= ENV['INPUT_FILE']
+    end
+
+    def output_file
+      @output_file ||= ENV['OUTPUT_FILE']
     end
   end
 end
