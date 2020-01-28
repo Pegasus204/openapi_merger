@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'yaml'
 
@@ -35,13 +37,13 @@ module OpenapiMerger
     end
 
     def build_yaml(output)
-      return unless output.kind_of?(Hash)
+      return unless output.is_a?(Hash)
 
       YAML.dump(output, outputfile)
     end
 
     def build_json(output)
-      return unless output.kind_of?(Hash)
+      return unless output.is_a?(Hash)
 
       outputfile.puts(JSON.pretty_generate(output))
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 RSpec.describe OpenapiMerger::Input do
@@ -13,7 +15,7 @@ RSpec.describe OpenapiMerger::Input do
     end
 
     context 'Input file was YAML' do
-      let(:options) { {input: 'spec/fixtures/openapi.yml'} }
+      let(:options) { { input: 'spec/fixtures/openapi.yml' } }
 
       it 'Call parse_yaml method' do
         expect(target).to have_received(:parse_yaml)
@@ -21,7 +23,7 @@ RSpec.describe OpenapiMerger::Input do
     end
 
     context 'Input file was JSON' do
-      let(:options) { {input: 'spec/fixtures/openapi.json'} }
+      let(:options) { { input: 'spec/fixtures/openapi.json' } }
 
       it 'Call parse_json method' do
         expect(target).to have_received(:parse_json)
@@ -29,7 +31,7 @@ RSpec.describe OpenapiMerger::Input do
     end
 
     context 'Input file was unsupported file' do
-      let(:options) { {input: 'spec/fixtures/openapi.txt'} }
+      let(:options) { { input: 'spec/fixtures/openapi.txt' } }
 
       it 'Call parse_unsupported method' do
         expect(target).to have_received(:parse_unsupported)
