@@ -11,14 +11,14 @@ require 'openapi_merger/version'
 module OpenapiMerger
   class << self
     def call
-      merged = merge(input.call).call
+      merged = merge.call(input.call)
       output.call(merged)
     end
 
     private
 
-    def merge(origin)
-      OpenapiMerger::Merge.new(options, origin)
+    def merge
+      OpenapiMerger::Merge.new(options)
     end
 
     def input

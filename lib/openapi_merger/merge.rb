@@ -2,14 +2,13 @@
 
 module OpenapiMerger
   class Merge
-    def initialize(options, origin)
+    def initialize(options)
       @options = options
-      @origin = origin
     end
 
-    attr_reader :options, :origin
+    attr_reader :options
 
-    def call
+    def call(origin)
       turn_around(origin)
     end
 
