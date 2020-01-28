@@ -1,0 +1,12 @@
+AllCops:
+  TargetRubyVersion: 2.7
+
+Layout/LineLength:
+  Max: 128
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Style/Documentation:
+  Enabled: false

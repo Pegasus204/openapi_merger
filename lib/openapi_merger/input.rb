@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'yaml'
 
@@ -39,11 +41,11 @@ module OpenapiMerger
     end
 
     def parse_yaml
-      YAML.load(input)
+      YAML.safe_load(input)
     end
 
     def parse_json
-      JSON.load(input)
+      JSON.parse(input)
     end
 
     def parse_unsupported
