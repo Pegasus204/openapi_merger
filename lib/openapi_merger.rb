@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'dotenv/load'
+
 require 'openapi_merger/error'
 require 'openapi_merger/input'
 require 'openapi_merger/output'
