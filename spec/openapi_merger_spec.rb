@@ -3,13 +3,13 @@ require 'spec_helper'
 RSpec.describe OpenapiMerger do
   describe '#call' do
     before do
-      allow(OpenapiMerger::Merger::JSONMerger).to receive_message_chain(:new, :call)
-      allow(OpenapiMerger::Merger::YAMLMerger).to receive_message_chain(:new, :call)
+      allow(OpenapiMerger::JSONMerger).to receive_message_chain(:new, :call)
+      allow(OpenapiMerger::YAMLMerger).to receive_message_chain(:new, :call)
     end
 
     context '.yml file specified' do
       let(:options) { {input: 'test.yml'} }
-      let(:target) { OpenapiMerger::Merger::YAMLMerger.new(options) }
+      let(:target) { OpenapiMerger::YAMLMerger.new(options) }
 
       it 'call YAML merger' do
         OpenapiMerger.call(options)
@@ -19,7 +19,7 @@ RSpec.describe OpenapiMerger do
 
     context '.json file specified' do
       let(:options) { {input: 'test.json'} }
-      let(:target) { OpenapiMerger::Merger::JSONMerger.new(options) }
+      let(:target) { OpenapiMerger::JSONMerger.new(options) }
 
       it 'call JSON merger' do
         OpenapiMerger.call(options)

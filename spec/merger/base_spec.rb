@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe OpenapiMerger::Merger::Base do
+RSpec.describe OpenapiMerger::Base do
   describe '#call' do
     let(:target) { described_class.new({}) }
 

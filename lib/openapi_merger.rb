@@ -1,7 +1,7 @@
 require "openapi_merger/error"
-require "openapi_merger/merger/base"
-require "openapi_merger/merger/json_merger"
-require "openapi_merger/merger/yaml_merger"
+require "openapi_merger/base"
+require "openapi_merger/json_merger"
+require "openapi_merger/yaml_merger"
 require "openapi_merger/version"
 
 module OpenapiMerger
@@ -11,9 +11,9 @@ module OpenapiMerger
 
       case File.extname options[:input].downcase
       when '.yaml', '.yml'
-        OpenapiMerger::Merger::YAMLMerger.new(options).call
+        OpenapiMerger::YAMLMerger.new(options).call
       when '.json'
-        OpenapiMerger::Merger::JSONMerger.new(options).call
+        OpenapiMerger::JSONMerger.new(options).call
       else
         UnexpectedInputFileError
       end
