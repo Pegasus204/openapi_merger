@@ -6,7 +6,7 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'dotenv'
-gem 'rake', '~> 12.0'
+gem 'rake', '~> 13.0'
 gem 'rspec', '~> 3.0'
 
 group :development, :test do
