@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     openapi_merger (0.1.0)
+      dotenv
+      thor
 
 GEM
   remote: https://rubygems.org/
@@ -43,12 +45,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  dotenv
   openapi_merger!
-  rake (~> 13.0)
-  rspec (~> 3.0)
+  rake
+  rspec
   rubocop
-  thor
 
 BUNDLED WITH
    2.1.2
