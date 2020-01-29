@@ -3,6 +3,7 @@ PATH
   specs:
     openapi_merger (0.1.0)
       dotenv
+      filewatcher
       thor
 
 GEM
@@ -11,7 +12,10 @@ GEM
     ast (2.4.0)
     diff-lcs (1.3)
     dotenv (2.7.5)
+    filewatcher (1.1.1)
+      optimist (~> 3.0)
     jaro_winkler (1.5.4)
+    optimist (3.0.0)
     parallel (1.19.1)
     parser (2.7.0.2)
       ast (~> 2.4.0)
