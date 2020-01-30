@@ -9,6 +9,7 @@ class Openapi < Thor
   desc 'watch', 'Merge multiple OpenAPI documents to one OpenAPI document on file changed'
 
   def watch
+    $stdout.sync = true
     logger = Logger.new(STDOUT)
     logger.info('file-watch task start')
 
