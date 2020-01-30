@@ -6,19 +6,25 @@ require 'openapi_merger/error'
 require 'openapi_merger/input'
 require 'openapi_merger/merge'
 require 'openapi_merger/output'
+require 'openapi_merger/process/optional'
 require 'openapi_merger/version'
 
 module OpenapiMerger
   class << self
     def call
       merged = merge.call(input.call)
-      output.call(merged)
+      proceed = process_optional.call(merged)
+      output.call(proceed)
     end
 
     private
 
     def merge
       OpenapiMerger::Merge.new(options)
+    end
+
+    def process_optional
+      OpenapiMerger::Process::Optional.new(options)
     end
 
     def input
