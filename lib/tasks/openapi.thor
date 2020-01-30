@@ -6,22 +6,14 @@ require 'openapi_merger'
 require 'filewatcher'
 
 class Openapi < Thor
-  desc 'merge', 'Merge multiple OpenAPI documents to one OpenAPI document'
-
-  def merge
-    logger.info('merge task start')
-    begin
-      logger.info(OpenapiMerger.call)
-    rescue StandardError => e
-      logger.error(e)
-    end
-    logger.info('merge task finished')
-  end
-
   desc 'watch', 'Merge multiple OpenAPI documents to one OpenAPI document on file changed'
 
   def watch
+    logger = Logger.new(STDOUT)
     logger.info('file-watch task start')
+
+    puts target_dir
+
     begin
       Filewatcher.new([target_dir]).watch do |filename, event|
         puts "File #{event}: " + filename
@@ -34,10 +26,6 @@ class Openapi < Thor
   end
 
   private
-
-  def logger
-    @logger ||= Logger.new(STDOUT)
-  end
 
   def target_dir
     File.dirname(input_file)
