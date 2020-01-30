@@ -1,0 +1,9 @@
+test:
+  properties:
+    id:
+      hoge: 'fuga'
+    name:
+      hoge: 'fuga'
+    email:
+      optional: true
+      hoge: 'fuga'
