@@ -51,6 +51,52 @@ You have to provide two environment variables and mount host directory to contai
 
 Volumes should be placed on relational path from `/app` on container.
 
+### Tips
+
+This tool always convert request/response field to `required: true` field.  
+You can set the request/response field to optional, add `optional: true` to your field property like this.
+
+Input file
+
+```yaml
+post:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            foo:
+              type: string
+            bar:
+              type: string
+            baz:
+              type: string
+              optional: true
+```
+
+Output file
+
+```yaml
+post:
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            foo:
+              type: string
+            bar:
+              type: string
+            baz:
+              type: string
+              optional: true
+          required:
+            - foo
+            - bar
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on [GitHub](https://github.com/Pegasus204/openapi_merger).  
