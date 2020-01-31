@@ -45,8 +45,8 @@ services:
 
 You have to provide two environment variables and mount host directory to container directory.  
 
-- INPUT_FILE means path to input OpenAPI file.
-- OUTPUT_FILE means path to output OpenAPI file.
+- `INPUT_FILE` means path to input OpenAPI file.
+- `OUTPUT_FILE` means path to output OpenAPI file.
 - Volumes are path to input/output directory or both.
 
 Volumes should be placed on relational path from `/app` on container.
