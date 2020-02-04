@@ -17,11 +17,12 @@ module OpenapiMerger
     def turn_around(object)
       case object
       when Hash
+        replace(object) if object.key?(reference_keyword)
+
         object.keys.map do |key|
-          replace(object) if key == '$ref'
           [
             key,
-            turn_around(object[key])
+            turn_around(object.fetch(key))
           ]
         end.to_h
       when Array
@@ -31,13 +32,17 @@ module OpenapiMerger
       else
         object
       end
-      object
+    end
+
+    def reference_keyword
+      '$ref'
     end
 
     def replace(object)
-      object.replace(
-        relational_input(object.values.first)
+      object.merge!(
+        relational_input(object.fetch(reference_keyword))
       )
+      object.delete(reference_keyword)
     end
 
     def relational_input(filepath)

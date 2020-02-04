@@ -9,9 +9,12 @@ RSpec.describe OpenapiMerger::Merge do
     let(:expected) do
       {
         'test' => {
+          'hoge' => 'hoge',
           'merge' => {
             'yaml' => 'This is merged YAML'
-          }
+          },
+          'fuga' => 'fuga',
+          'openapi' => 'merger'
         }
       }
     end
