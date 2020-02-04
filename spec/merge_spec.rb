@@ -14,7 +14,9 @@ RSpec.describe OpenapiMerger::Merge do
             'yaml' => 'This is merged YAML'
           },
           'fuga' => 'fuga',
-          'openapi' => 'merger'
+          'openapi' => {
+            '$ref' => '#/components/hogehoge'
+          }
         }
       }
     end

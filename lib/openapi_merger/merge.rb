@@ -39,10 +39,18 @@ module OpenapiMerger
     end
 
     def replace(object)
-      object.merge!(
-        relational_input(object.fetch(reference_keyword))
-      )
-      object.delete(reference_keyword)
+      candidate = if object.fetch(reference_keyword).start_with?('#')
+                    object
+                  else
+                    object.merge!(
+                      relational_input(object.fetch(reference_keyword))
+                    )
+                  end
+
+      candidate.reject! do |k, v|
+        k.eql?(reference_keyword) && !v.start_with?('#')
+      end
+      candidate
     end
 
     def relational_input(filepath)
