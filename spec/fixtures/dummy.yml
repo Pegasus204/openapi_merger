@@ -1,4 +1,5 @@
 test:
   hoge: 'hoge'
   $ref: './merge.yml'
-  openapi: 'merger'
+  openapi:
+    $ref: '#/components/hogehoge'
