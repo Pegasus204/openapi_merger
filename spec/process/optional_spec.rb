@@ -35,4 +35,36 @@ RSpec.describe OpenapiMerger::Process::Optional do
       end
     end
   end
+
+  describe '#call2' do
+    let(:target) { described_class.new(options) }
+    let(:origin) { OpenapiMerger::Input.new(options).call }
+    let(:expected) do
+      {
+        'other' => 'test',
+        'properties' => {
+          'id' => {
+            'hoge' => 'fuga'
+          },
+          'name' => {
+            'hoge' => 'fuga'
+          },
+          'email' => {
+            'hoge' => 'fuga'
+          }
+        },
+        'required' => %w[
+          id
+          name
+        ]
+      }
+    end
+
+    context 'Replace required object from optional: false' do
+      let(:options) { { input: 'spec/fixtures/optional2.yml' } }
+      it do
+        expect(target.call(origin)).to eq expected
+      end
+    end
+  end
 end
