@@ -18,8 +18,8 @@ module OpenapiMerger
       def turn_around(object)
         case object
         when Hash
+          replace(object) if object.keys.include?('properties')
           object.keys.map do |key|
-            replace(object) if object.keys.include?('properties')
             [
               key,
               turn_around(object[key])
