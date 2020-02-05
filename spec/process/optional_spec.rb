@@ -12,8 +12,8 @@ RSpec.describe OpenapiMerger::Process::Optional do
         {
           'test' => {
             'required' => %w[
-            id
-            name
+              id
+              name
             ],
             'properties' => {
               'id' => {
@@ -29,7 +29,7 @@ RSpec.describe OpenapiMerger::Process::Optional do
           }
         }
       end
-      let(:options) { {input: 'spec/fixtures/optional.yml'} }
+      let(:options) { { input: 'spec/fixtures/optional.yml' } }
       it do
         expect(target.call(origin)).to eq expected
       end
@@ -56,7 +56,7 @@ RSpec.describe OpenapiMerger::Process::Optional do
           ]
         }
       end
-      let(:options) { {input: 'spec/fixtures/optional2.yml'} }
+      let(:options) { { input: 'spec/fixtures/optional2.yml' } }
       it do
         expect(target.call(origin)).to eq expected
       end
