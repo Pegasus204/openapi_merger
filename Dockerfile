@@ -1,4 +1,4 @@
-FROM ruby:2.7.1
+FROM ruby:2.7.2
 WORKDIR /app
 
 ENV INPUT_FILE $INPUT_FILE
