@@ -10,7 +10,7 @@ class Openapi < Thor
 
   def watch
     $stdout.sync = true
-    logger = Logger.new(STDOUT)
+    logger = Logger.new($stdout)
     logger.info('file-watch task start')
 
     puts target_dir

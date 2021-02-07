@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Merge OpenAPI documents split into multiple files.'
   spec.homepage      = 'https://github.com/Pegasus204/openapi_merger'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
