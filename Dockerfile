@@ -1,4 +1,4 @@
-FROM ruby:2.7.2-slim
+FROM ruby:3.0.1-slim
 WORKDIR /app
 
 RUN apt-get update && apt-get -y upgrade
