@@ -5,11 +5,17 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    reviewers:
+      - "Pranc1ngPegasus"
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
       interval: "daily"
+    reviewers:
+      - "Pranc1ngPegasus"
   - package-ecosystem: "github-actions"
     directory: '/'
     schedule:
       interval: "daily"
+    reviewers:
+      - "Pranc1ngPegasus"
